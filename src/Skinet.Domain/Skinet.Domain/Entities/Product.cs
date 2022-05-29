@@ -1,6 +1,10 @@
-﻿namespace Skinet.Domain;
+﻿using System.ComponentModel.DataAnnotations;
+namespace Skinet.Domain;
+#nullable disable
+
 public class Product
 {
-    public int ProductId { get; set; }
+    [Key]
+    public int ProductId { get; init; }
     public string ProductName { get; set; }
 }

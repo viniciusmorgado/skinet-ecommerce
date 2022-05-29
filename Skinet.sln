@@ -1,14 +1,53 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30114.105
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32519.379
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E769CADB-4EC1-43A3-B79B-FB3C39E9E635}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Skinet.Application", "Skinet.Application", "{2E424BCA-79D0-44D1-8D51-AA2577FF0AFF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Skinet.MarketplaceApi", "src\Skinet.Application\Skinet.MarketplaceApi\Skinet.MarketplaceApi.csproj", "{71EDE3A3-4CFA-487A-83AE-1CEBC3F5CCB7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Skinet.Domain", "src\Skinet.Domain\Skinet.Domain\Skinet.Domain.csproj", "{619D1980-7897-43BA-AC1E-5263CBE525A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Skinet.Domain", "Skinet.Domain", "{3014D4C4-10CE-4F14-A413-18D6CD8EB203}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Skinet.Data", "src\Skinet.Infrastructure\Skinet.Data\Skinet.Data.csproj", "{51B35032-DB3C-47DD-A715-FF59ADF31690}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Skinet.Infrastructure", "Skinet.Infrastructure", "{5CFE2755-CF16-4B9E-8497-16A5CF033D3B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{71EDE3A3-4CFA-487A-83AE-1CEBC3F5CCB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71EDE3A3-4CFA-487A-83AE-1CEBC3F5CCB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71EDE3A3-4CFA-487A-83AE-1CEBC3F5CCB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71EDE3A3-4CFA-487A-83AE-1CEBC3F5CCB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{619D1980-7897-43BA-AC1E-5263CBE525A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{619D1980-7897-43BA-AC1E-5263CBE525A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{619D1980-7897-43BA-AC1E-5263CBE525A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{619D1980-7897-43BA-AC1E-5263CBE525A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51B35032-DB3C-47DD-A715-FF59ADF31690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51B35032-DB3C-47DD-A715-FF59ADF31690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51B35032-DB3C-47DD-A715-FF59ADF31690}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51B35032-DB3C-47DD-A715-FF59ADF31690}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2E424BCA-79D0-44D1-8D51-AA2577FF0AFF} = {E769CADB-4EC1-43A3-B79B-FB3C39E9E635}
+		{71EDE3A3-4CFA-487A-83AE-1CEBC3F5CCB7} = {2E424BCA-79D0-44D1-8D51-AA2577FF0AFF}
+		{619D1980-7897-43BA-AC1E-5263CBE525A0} = {3014D4C4-10CE-4F14-A413-18D6CD8EB203}
+		{3014D4C4-10CE-4F14-A413-18D6CD8EB203} = {E769CADB-4EC1-43A3-B79B-FB3C39E9E635}
+		{51B35032-DB3C-47DD-A715-FF59ADF31690} = {5CFE2755-CF16-4B9E-8497-16A5CF033D3B}
+		{5CFE2755-CF16-4B9E-8497-16A5CF033D3B} = {E769CADB-4EC1-43A3-B79B-FB3C39E9E635}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2C3A7B00-605A-4BDB-821D-D6D78B38FE30}
 	EndGlobalSection
 EndGlobal
