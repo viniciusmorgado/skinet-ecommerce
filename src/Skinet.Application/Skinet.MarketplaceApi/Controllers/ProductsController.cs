@@ -1,19 +1,31 @@
 using Microsoft.AspNetCore.Mvc;
-namespace Skinet.Application.MarketplaceApi;
+using Skinet.Domain.Entities;
+using Skinet.Domain.Interfaces;
+
+namespace Skinet.MarketplaceApi.Controllers;
+#nullable disable
 
 [ApiController]
 [Route("api/[controller]")]
 public class ProductsController : ControllerBase
 {
-    [HttpGet]
-    public string Get()
+    private readonly IProductRepository _productRepository;
+
+    public ProductsController(IProductRepository productRepository)
     {
-        return "this will be a list of products";
+        _productRepository = productRepository;
+    }
+
+    [HttpGet]
+    public async Task<ActionResult<List<Product>>> GetProductsByIdTask()
+    {
+        var products = await _productRepository.GetProductsAsync();
+        return Ok(products);
     }
 
     [HttpGet("{id}")]
-    public string Get(int id)
+    public async Task<ActionResult<Product>> GetProductsTask(int id)
     {
-        return "this will be a single product!";
+        return await _productRepository.GetByIdAsync(id);
     }
 }

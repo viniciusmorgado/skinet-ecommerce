@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-namespace Skinet.Domain;
+namespace Skinet.Domain.Entities;
 #nullable disable
 
 public class Product
