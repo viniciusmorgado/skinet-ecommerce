@@ -1,4 +1,5 @@
 ﻿using Skinet.Shared;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Skinet.Domain.Entities;
 #nullable disable
