@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Skinet.Data.Database;
 
@@ -10,9 +11,10 @@ using Skinet.Data.Database;
 namespace Skinet.Data.Migrations
 {
     [DbContext(typeof(SkinetContext))]
-    partial class SkinetContextModelSnapshot : ModelSnapshot
+    [Migration("20220529223411_ConfigProductMapClass")]
+    partial class ConfigProductMapClass
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

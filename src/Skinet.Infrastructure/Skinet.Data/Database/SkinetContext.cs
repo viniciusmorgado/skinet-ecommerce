@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Skinet.Domain.Entities;
+using System.Reflection;
 
 namespace Skinet.Data.Database;
 #nullable disable
@@ -18,5 +19,13 @@ public class SkinetContext : DbContext
         }
     }
 
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+        modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+    }
+
     public DbSet<Product> Products { get; set; }
+    public DbSet<ProductType> ProductTypes { get; set; }
+    public DbSet<ProductBrand> ProductBrands { get; set; }
 }

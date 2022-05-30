@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Skinet.Shared;
 
 namespace Skinet.Domain.Entities
 {
-    public class ProductType
+    public class ProductType : BaseEntity
     {
     }
 }
