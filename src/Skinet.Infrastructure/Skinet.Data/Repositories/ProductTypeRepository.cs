@@ -10,6 +10,11 @@ public class ProductTypeRepository : IProductTypeRepository
 {
     private readonly SkinetContext _context;
 
+    public ProductTypeRepository(SkinetContext context)
+    {
+        _context = context;
+    }
+
     public async Task<IReadOnlyList<ProductType>> GetProductTypesAsync()
     {
         return await _context.ProductTypes.ToListAsync();

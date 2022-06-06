@@ -37,9 +37,9 @@ public class ProductsController : ControllerBase
 
     [HttpGet]
     [Route("types")]
-    public async Task<IReadOnlyList<ProductType>> GetProductsTypesTask()
+    public async Task<ActionResult<IReadOnlyList<ProductType>>> GetProductsTypesTask()
     {
-        return await _productTypeRepository.GetProductTypesAsync();
+        return Ok(await _productTypeRepository.GetProductTypesAsync());
     }
 
     [HttpGet]
