@@ -1,7 +1,6 @@
 ﻿using Skinet.Domain.Entities;
 using Skinet.Domain.Exceptions;
 using System.Text.Json;
-
 namespace Skinet.Data.Database;
 
 public class SkinetContextSeed
@@ -14,7 +13,7 @@ public class SkinetContextSeed
             #region Products Brands
             if (!context.ProductBrands.Any())
             {
-                string? brandsData = File.ReadAllText("C:/Users/vinic/source/Repos/skinet-ecommerce/src/Skinet.Infrastructure/Skinet.Data/SeedData/brands.json");
+                string? brandsData = File.ReadAllText("skinet-ecommerce/src/Skinet.Infrastructure/Skinet.Data/SeedData/brands.json");
                 List<ProductBrand>? brands = JsonSerializer.Deserialize<List<ProductBrand>>(brandsData);
                 if (brands is not null)
                 {
@@ -31,7 +30,7 @@ public class SkinetContextSeed
             #region Product Type
             if (!context.ProductTypes.Any())
             {
-                string? typesData = File.ReadAllText("C:/Users/vinic/source/Repos/skinet-ecommerce/src/Skinet.Infrastructure/Skinet.Data/SeedData/types.json");
+                string? typesData = File.ReadAllText("skinet-ecommerce/src/Skinet.Infrastructure/Skinet.Data/SeedData/types.json");
                 List<ProductType>? types = JsonSerializer.Deserialize<List<ProductType>>(typesData);
                 if (types is not null)
                 {
@@ -48,7 +47,7 @@ public class SkinetContextSeed
             #region Products
             if (!context.Products.Any())
             {
-                string? productsData = File.ReadAllText("C:/Users/vinic/source/Repos/skinet-ecommerce/src/Skinet.Infrastructure/Skinet.Data/SeedData/products.json");
+                string? productsData = File.ReadAllText("skinet-ecommerce/src/Skinet.Infrastructure/Skinet.Data/SeedData/products.json");
                 List<Product>? products = JsonSerializer.Deserialize<List<Product>>(productsData);
                 if (products is not null)
                 {

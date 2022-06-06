@@ -1,7 +1,6 @@
-﻿namespace Skinet.Domain.Exceptions
+﻿namespace Skinet.Domain.Exceptions;
+
+public class SeedDataException : Exception
 {
-    public class SeedDataException : Exception
-    {
-        public SeedDataException(string message) : base(message) { }
-    }
+    public SeedDataException(string message) : base(message) { }
 }

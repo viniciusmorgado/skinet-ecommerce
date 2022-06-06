@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Skinet.Domain.Entities;
 using System.Reflection;
-
 namespace Skinet.Data.Database;
+
 #nullable disable
 
 public class SkinetContext : DbContext

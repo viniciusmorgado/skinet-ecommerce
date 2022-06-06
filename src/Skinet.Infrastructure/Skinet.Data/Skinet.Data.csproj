@@ -19,4 +19,8 @@
     <ProjectReference Include="..\..\Skinet.Domain\Skinet.Domain\Skinet.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 </Project>

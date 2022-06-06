@@ -1,7 +1,6 @@
 ﻿using Skinet.Shared;
-using System.ComponentModel.DataAnnotations.Schema;
-
 namespace Skinet.Domain.Entities;
+
 #nullable disable
 
 public class Product : BaseEntity
@@ -13,5 +12,5 @@ public class Product : BaseEntity
     public ProductType ProductType { get; set; }
     public int ProductTypeId { get; init; }
     public ProductBrand ProductBrand { get; set; }
-    public int ProductBrandId { get; set; }
+    public int ProductBrandId { get; init; }
 }

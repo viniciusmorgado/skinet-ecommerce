@@ -11,8 +11,8 @@ using Skinet.Data.Database;
 namespace Skinet.Data.Migrations
 {
     [DbContext(typeof(SkinetContext))]
-    [Migration("20220530030657_InitialMigrations")]
-    partial class InitialMigrations
+    [Migration("20220606013839_UpdateBrandsAndTypes")]
+    partial class UpdateBrandsAndTypes
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -66,6 +66,9 @@ namespace Skinet.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("ProductBrands");
@@ -78,6 +81,9 @@ namespace Skinet.Data.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

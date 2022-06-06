@@ -2,8 +2,8 @@
 using Skinet.Data.Database;
 using Skinet.Domain.Entities;
 using Skinet.Domain.Interfaces;
-
 namespace Skinet.Data.Repositories;
+
 #nullable disable
 
 public class ProductRepository : IProductRepository
