@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-namespace Skinet.Shared;
+namespace Skinet.Shared.BaseEntities;
 
 #nullable disable
 

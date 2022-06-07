@@ -1,4 +1,6 @@
 ﻿using Skinet.Shared;
+using Skinet.Shared.BaseEntities;
+
 namespace Skinet.Domain.Entities;
 
 #nullable disable

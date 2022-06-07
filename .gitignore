@@ -204,6 +204,9 @@ csx/
 ecf/
 rcf/
 
+# Rider JetBrains
+.idea/
+
 # Windows Store app package directories and files
 AppPackages/
 BundleArtifacts/
