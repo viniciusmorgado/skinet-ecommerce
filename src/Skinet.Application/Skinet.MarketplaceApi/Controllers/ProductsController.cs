@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Skinet.Domain.Entities;
 using Skinet.Domain.Interfaces;
+using Skinet.Domain.Interfaces.IRepositories;
+
 namespace Skinet.MarketplaceApi.Controllers;
 #nullable disable
 

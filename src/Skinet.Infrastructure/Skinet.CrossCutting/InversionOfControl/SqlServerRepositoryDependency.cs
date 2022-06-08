@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Skinet.Data.Repositories;
 using Skinet.Domain.Interfaces;
+using Skinet.Domain.Interfaces.IRepositories;
+
 namespace Skinet.CrossCutting.InversionOfControl;
 
 public static class SqlServerRepositoryDependency

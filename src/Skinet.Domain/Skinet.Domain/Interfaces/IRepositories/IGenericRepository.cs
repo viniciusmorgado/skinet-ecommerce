@@ -1,5 +1,7 @@
 ﻿using Skinet.Shared;
-namespace Skinet.Domain.Interfaces;
+using Skinet.Shared.BaseClasses;
+
+namespace Skinet.Domain.Interfaces.IRepositories;
 
 public interface IGenericRepository<T> where T : BaseEntity
 {

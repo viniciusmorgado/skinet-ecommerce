@@ -1,7 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Skinet.Data.Database;
 using Skinet.Domain.Interfaces;
+using Skinet.Domain.Interfaces.IRepositories;
 using Skinet.Shared;
+using Skinet.Shared.BaseClasses;
+
 namespace Skinet.Data.Repositories;
 
 public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
