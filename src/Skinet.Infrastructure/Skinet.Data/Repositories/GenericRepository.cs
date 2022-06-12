@@ -1,8 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Skinet.Data.Database;
-using Skinet.Domain.Interfaces;
 using Skinet.Domain.Interfaces.IRepositories;
-using Skinet.Shared;
+using Skinet.Domain.Interfaces.ISpecifications;
 using Skinet.Shared.BaseClasses;
 
 namespace Skinet.Data.Repositories;
@@ -24,5 +23,15 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
     public async Task<IReadOnlyList<T>> ListAllAsync()
     {
         return await _context.Set<T>().ToListAsync();
+    }
+
+    public Task<T> GetEntityWithSpec(ISpecification<T> specs)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<IReadOnlyList<T>> ListAsync(ISpecification<T> specs)
+    {
+        throw new NotImplementedException();
     }
 }

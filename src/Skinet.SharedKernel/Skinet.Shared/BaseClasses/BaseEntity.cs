@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-namespace Skinet.Shared.BaseClasses;
 
+namespace Skinet.Shared.BaseClasses;
 #nullable disable
 
 public class BaseEntity
