@@ -13,7 +13,7 @@ public class SpecificationEvaluator<TEntity> where TEntity : BaseEntity
         IQueryable<TEntity> query = inputQuery;
         
         if (specs is null || query is null)
-            throw new NullReferenceException("Specs or query of the evaluator are null!");
+            throw new NullReferenceException("Specs or query of the evaluator are null.");
         
         query = query.Where(specs.Criteria);
         query = specs.Includes.Aggregate( query, (current, include) => 
