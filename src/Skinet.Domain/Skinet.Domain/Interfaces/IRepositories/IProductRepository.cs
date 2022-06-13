@@ -1,5 +1,6 @@
 ﻿using Skinet.Domain.Entities;
-namespace Skinet.Domain.Interfaces;
+
+namespace Skinet.Domain.Interfaces.IRepositories;
 
 public interface IProductRepository
 {

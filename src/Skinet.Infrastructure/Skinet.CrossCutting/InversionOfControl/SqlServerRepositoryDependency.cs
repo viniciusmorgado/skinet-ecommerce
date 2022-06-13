@@ -12,7 +12,6 @@ public static class SqlServerRepositoryDependency
         services.AddScoped<IProductRepository, ProductRepository>();
         services.AddScoped<IProductBrandRepository, ProductBrandRepository>();
         services.AddScoped<IProductTypeRepository, ProductTypeRepository>();
-        // Generic Repository
         services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
     }
 }

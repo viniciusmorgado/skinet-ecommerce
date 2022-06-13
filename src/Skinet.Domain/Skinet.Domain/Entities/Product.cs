@@ -1,8 +1,6 @@
-﻿using Skinet.Shared;
-using Skinet.Shared.BaseClasses;
+﻿using Skinet.Shared.BaseClasses;
 
 namespace Skinet.Domain.Entities;
-
 #nullable disable
 
 public class Product : BaseEntity

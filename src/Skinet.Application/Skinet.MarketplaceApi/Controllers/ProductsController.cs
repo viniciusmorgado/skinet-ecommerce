@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Skinet.Domain.Entities;
-using Skinet.Domain.Interfaces;
 using Skinet.Domain.Interfaces.IRepositories;
+using Skinet.Domain.Specifications;
 
 namespace Skinet.MarketplaceApi.Controllers;
 #nullable disable
@@ -26,7 +26,8 @@ public class ProductsController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<List<Product>>> GetProductsTask()
     {
-        IReadOnlyList<Product> products = await _productRepository.ListAllAsync();
+        ProductWithTypesAndBrandsSpecs specs = new();
+        IReadOnlyList<Product> products = await _productRepository.ListAsync(specs);
         return Ok(products);
     }
 

@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Skinet.Data.Database;
+﻿using Skinet.Data.Database;
 using Skinet.Domain.Entities;
 using Skinet.Domain.Interfaces;
-namespace Skinet.Data.Repositories;
+using Microsoft.EntityFrameworkCore;
+using Skinet.Domain.Interfaces.IRepositories;
 
+namespace Skinet.Data.Repositories;
 #nullable disable
 
 public class ProductRepository : IProductRepository
@@ -26,6 +27,7 @@ public class ProductRepository : IProductRepository
     public async Task<IReadOnlyList<Product>> GetProductsAsync()
     {
         const int typeId = 1;
+        
         Task<List<Product>> products = _context.Products
             .Where(x => x.ProductTypeId == typeId)
             .Include(x => x.ProductType)

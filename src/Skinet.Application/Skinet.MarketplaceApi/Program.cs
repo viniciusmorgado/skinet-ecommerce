@@ -1,9 +1,7 @@
-using Microsoft.EntityFrameworkCore;
 using Skinet.CrossCutting.InversionOfControl;
 using Skinet.Data.Database;
-using Skinet.Domain.Exceptions;
 
-var builder = WebApplication.CreateBuilder(args);
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
@@ -12,7 +10,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSqlServerRepositoryDependency();
 builder.Services.AddTransient<SkinetContext>();
 
-var app = builder.Build();
+WebApplication app = builder.Build();
 
 // Apply migrations and create the database on startup logging any errors.
 //await using var scope = app.Services.CreateAsyncScope();

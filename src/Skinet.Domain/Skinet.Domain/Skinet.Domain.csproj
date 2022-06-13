@@ -17,8 +17,4 @@
 		<ProjectReference Include="..\..\Skinet.SharedKernel\Skinet.Shared\Skinet.Shared.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="Specifications" />
-	</ItemGroup>
-
 </Project>

@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Skinet.Data.Database;
-using Skinet.Domain.Entities;
 using Skinet.Domain.Interfaces.IRepositories;
 using Skinet.Domain.Interfaces.ISpecifications;
+using Skinet.Domain.Specifications;
 using Skinet.Shared.BaseClasses;
 
 namespace Skinet.Data.Repositories;
@@ -10,23 +10,21 @@ namespace Skinet.Data.Repositories;
 public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
 {
     private readonly SkinetContext _context;
-    
-    public GenericRepository(SkinetContext context)
-    {
-        _context = context;
-    }
+
+    public GenericRepository(SkinetContext context) => _context = context;
     
     public async Task<T?> GetByIdAsync(int id)
     {
         return await _context.Set<T>().FindAsync(id);
     }
 
-    public async Task<IReadOnlyList<T>> ListAllAsync()
+    public async Task<IReadOnlyList<T?>> ListAllAsync()
     {
         return await _context.Set<T>().ToListAsync();
     }
-
-    public async Task<T?> GetEntityWithSpec(ISpecification<T> specs)
+    
+    // Specification
+    public async Task<T?> GetEntityWithSpecs(ISpecification<T> specs)
     {
         return await ApplySpecification(specs).FirstOrDefaultAsync();
     }
