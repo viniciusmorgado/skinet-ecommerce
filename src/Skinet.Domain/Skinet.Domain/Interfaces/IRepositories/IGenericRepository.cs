@@ -2,11 +2,10 @@
 using Skinet.Shared.BaseClasses;
 
 namespace Skinet.Domain.Interfaces.IRepositories;
+#nullable disable
 
 public interface IGenericRepository<T> where T : BaseEntity
 {
-    Task<T?> GetByIdAsync(int id);
-    Task<IReadOnlyList<T?>> ListAllAsync();
-    Task<T?> GetEntityWithSpecs(ISpecification<T> specs);
-    Task<IReadOnlyList<T?>> ListAsync(ISpecification<T> specs);
+   IEnumerable<T> GetAllAsync(ISpecification<T> specs);
+   Task<T> GetByIdAsync(int id);
 }
