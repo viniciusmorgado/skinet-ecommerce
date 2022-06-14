@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
+using Skinet.Data.Repositories;
 using Skinet.Domain.Entities;
+using Skinet.Domain.Interfaces;
 using Skinet.Domain.Interfaces.IRepositories;
 using Skinet.Domain.Specifications;
 
@@ -10,24 +12,37 @@ namespace Skinet.MarketplaceApi.Controllers;
 [Route("api/v1/[controller]")]
 public class ProductsController : ControllerBase
 {
-    private readonly IGenericRepository<Product> _productRepository;
-    private readonly IGenericRepository<ProductType> _productTypeRepository;
-    private readonly IGenericRepository<ProductBrand> _productBrandRepository;
-
-    public ProductsController(IGenericRepository<Product> productRepository
-                            , IGenericRepository<ProductType> productTypeRepository
-                            , IGenericRepository<ProductBrand> productBrandRepository)
+    // private readonly IGenericRepository<Product> _productRepository;
+    // private readonly IGenericRepository<ProductType> _productTypeRepository;
+    // private readonly IGenericRepository<ProductBrand> _productBrandRepository;
+    
+    // public ProductsController(IGenericRepository<Product> productRepository
+    //                         , IGenericRepository<ProductType> productTypeRepository
+    //                         , IGenericRepository<ProductBrand> productBrandRepository)
+    // {
+    //     _productRepository = productRepository;
+    //     _productTypeRepository = productTypeRepository;
+    //     _productBrandRepository = productBrandRepository;
+    // }
+    
+    private readonly IProductRepository _productRepository;
+    private readonly IProductTypeRepository _productTypeRepository;
+    private readonly IProductBrandRepository _productBrandRepository;
+    
+    public ProductsController(IProductRepository productRepository
+                            , IProductTypeRepository productTypeRepository
+                            , IProductBrandRepository productBrandRepository)
     {
         _productRepository = productRepository;
         _productTypeRepository = productTypeRepository;
         _productBrandRepository = productBrandRepository;
     }
-
+    
     [HttpGet]
     public async Task<ActionResult<List<Product>>> GetProductsTask()
     {
-        ProductWithTypesAndBrandsSpecs specs = new();
-        IReadOnlyList<Product> products = await _productRepository.ListAsync(specs);
+        //ProductWithTypesAndBrandsSpecs specs = new();
+        IReadOnlyList<Product> products = await _productRepository.GetProductsAsync();
         return Ok(products);
     }
 
@@ -41,13 +56,13 @@ public class ProductsController : ControllerBase
     [Route("types")]
     public async Task<ActionResult<IReadOnlyList<ProductType>>> GetProductsTypesTask()
     {
-        return Ok(await _productTypeRepository.ListAllAsync());
+        return Ok(await _productTypeRepository.GetProductTypesAsync());
     }
 
     [HttpGet]
     [Route("brands")]
     public async Task<IReadOnlyList<ProductBrand>> GetProductsBrandsTask()
     {
-        return await _productBrandRepository.ListAllAsync();
+        return await _productBrandRepository.GetProductBrandsAsync();
     }
 }

@@ -10,14 +10,21 @@ public class SpecificationEvaluator<TEntity> where TEntity : BaseEntity
     public static IQueryable<TEntity> GetQuery( IQueryable<TEntity> inputQuery
                                               , ISpecification<TEntity> specs )
     {
-        IQueryable<TEntity> query = inputQuery;
+        try
+        {
+            IQueryable<TEntity> query = inputQuery;
         
-        if (specs is null || query is null)
-            throw new NullReferenceException("Specs or query of the evaluator are null.");
+            if (specs is null || query is null)
+                throw new NullReferenceException("Specs or query of the evaluator are null.");
         
-        query = query.Where(specs.Criteria);
-        query = specs.Includes.Aggregate( query, (current, include) => 
-                                          current.Include(include) );
-        return query;
+            query = query.Where(specs.Criteria);
+            query = specs.Includes.Aggregate(query, (current, include) => 
+                    current.Include(include));
+            return query;
+        }
+        catch (Exception ex)
+        {
+            throw new Exception("Specs evaluator has failed!", ex);
+        }
     }
 }
